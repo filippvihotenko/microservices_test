@@ -1,0 +1,27 @@
+best-store:
+  services:
+    catalogue:
+      uri: http://localhost:8081
+      username: admin
+      password: admin
+spring:
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8082/realms/beststore
+            user-name-attribute: preferred_username
+        registration:
+          keycloak:
+            client-id: manager-app
+            client-secret: OiR0J5eoxLXhy0ZNn7rGgJh7CPsV3n1O
+            scope:
+              - openid
+              - view_catalogue
+              - edit_catalogue
+              - microprofile-jwt
+
+
+
+
