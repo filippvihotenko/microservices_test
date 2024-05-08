@@ -12,5 +12,4 @@ import java.util.Optional;
 @Repository
 public interface ItemRepo extends CrudRepository<Item,Integer>
 {
-
 }

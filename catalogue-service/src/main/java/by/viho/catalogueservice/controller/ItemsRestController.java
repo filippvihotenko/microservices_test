@@ -8,6 +8,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindException;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.UriComponentsBuilder;
+
+import java.util.Map;
 
 @RestController
 @RequiredArgsConstructor
@@ -21,7 +24,7 @@ public class ItemsRestController{
     }
 
     @PostMapping("create")
-    public ResponseEntity<?> createItem(@Valid @RequestBody Item item, BindingResult bindingResult) throws BindException
+    public ResponseEntity<?> createItem(@Valid @RequestBody Item item, BindingResult bindingResult, UriComponentsBuilder uriComponentsBuilder) throws BindException
     {
         if(bindingResult.hasErrors()){
             if (bindingResult instanceof BindException e){
@@ -32,8 +35,8 @@ public class ItemsRestController{
             }
         }
         else{
-            itemService.createItem(item);
-            return ResponseEntity.ok().build();
+            Item createdItem =  itemService.createItem(item);
+            return ResponseEntity.created(uriComponentsBuilder.replacePath("/catalogue-api/item/{itemId}").build(Map.of("itemId", item.getId()))).body(createdItem);
         }
     }
 

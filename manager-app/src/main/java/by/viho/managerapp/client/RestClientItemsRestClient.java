@@ -32,10 +32,10 @@ public class RestClientItemsRestClient implements ItemsRestClient
     }
 
     @Override
-    public void createItem(String title, String details)
+    public Item createItem(String title, String details)
     {
         try{
-            restClient.post().uri("catalogue-api/items/create").contentType(MediaType.APPLICATION_JSON).body(new NewItemPayload(title,details)).retrieve().body(Item.class);
+            return restClient.post().uri("catalogue-api/items/create").contentType(MediaType.APPLICATION_JSON).body(new NewItemPayload(title,details)).retrieve().body(Item.class);
         }catch (HttpClientErrorException.BadRequest httpClientErrorException){
             ProblemDetail problemDetail = httpClientErrorException.getResponseBodyAs(ProblemDetail.class);
             throw new BadRequestException((List<String>) problemDetail.getProperties().get("errors"));
@@ -58,7 +58,8 @@ public class RestClientItemsRestClient implements ItemsRestClient
     public void updateItem(int itemId, String title, String details)
     {
         try{
-            restClient.post().uri("catalogue-api/item/{itemId}/edit", itemId ).body(new UpdateItemPayload(title,details)).retrieve().toBodilessEntity();
+            restClient.patch().uri("catalogue-api/item/{itemId}/edit", itemId ).contentType(MediaType.APPLICATION_JSON)
+                    .body(new UpdateItemPayload(title,details)).retrieve().toBodilessEntity();
         }
         catch (HttpClientErrorException.BadRequest exception){
             ProblemDetail problemDetail = exception.getResponseBodyAs(ProblemDetail.class);

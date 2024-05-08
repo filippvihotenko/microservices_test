@@ -7,7 +7,9 @@ import by.viho.managerapp.client.ItemsRestClient;
 import by.viho.managerapp.client.RestClientItemsRestClient;
 import by.viho.managerapp.controller.payload.UpdateItemPayload;
 import by.viho.managerapp.domain.Item;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -39,15 +41,15 @@ public class ItemController
     }
 
     @PostMapping("edit")
-    public String updateItemPost(@ModelAttribute(name = "item") Item item  , UpdateItemPayload payload, Model model){
+    public String updateItemPost(@ModelAttribute(name = "item") Item item  , UpdateItemPayload payload, Model model, HttpServletResponse response){
         try {
             restClient.updateItem(item.id(), payload.title(),payload.details());
-            return "redirect:/catalogue/items/list";
+            return "redirect:/catalogue/item/%d".formatted(item.id());
         } catch (BadRequestException exception) {
+            response.setStatus(HttpStatus.BAD_REQUEST.value());
             model.addAttribute("payload", payload);
             return "catalogue/items/edit";
         }
-
     }
 
     @PostMapping("delete")

@@ -9,7 +9,7 @@ public interface ItemsRestClient
 {
     List<Item> findAllItems();
 
-    void createItem(String title, String details);
+    Item createItem(String title, String details);
 
     Optional<Item> findItem(int productId);
 

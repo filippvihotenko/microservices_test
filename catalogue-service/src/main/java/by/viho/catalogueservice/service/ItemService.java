@@ -13,7 +13,7 @@ public interface ItemService
 {
     Iterable<Item> findAllItems();
 
-    void  createItem(Item item);
+    Item  createItem(Item item);
 
     Optional<Item> findItem(int id);
 

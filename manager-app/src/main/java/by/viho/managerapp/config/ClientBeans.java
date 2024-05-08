@@ -16,7 +16,10 @@ public class ClientBeans {
 
     @Bean
     public RestClientItemsRestClient productsRestClient(
-            @Value("${itemservice.service.catalogue.uri:http://localhost:8081}") String catalogueBaseUri, ClientRegistrationRepository clientRegistrationRepository, OAuth2AuthorizedClientRepository oAuth2AuthorizedClientRepository) {
-        return new RestClientItemsRestClient(RestClient.builder().baseUrl(catalogueBaseUri).requestInterceptor(new OAuthClientHttpRequestInterceptor(new DefaultOAuth2AuthorizedClientManager(clientRegistrationRepository, oAuth2AuthorizedClientRepository), "keycloak") ).build());
+            @Value("${itemservice.service.catalogue.uri:http://localhost:8081}") String catalogueBaseUri, ClientRegistrationRepository clientRegistrationRepository, OAuth2AuthorizedClientRepository oAuth2AuthorizedClientRepository)
+    {
+        return new RestClientItemsRestClient(RestClient.builder().baseUrl(catalogueBaseUri)
+                .requestInterceptor(new OAuthClientHttpRequestInterceptor(new DefaultOAuth2AuthorizedClientManager
+                        (clientRegistrationRepository, oAuth2AuthorizedClientRepository), "keycloak") ).build());
     }
 }

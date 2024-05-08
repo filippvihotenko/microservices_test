@@ -1,7 +1,14 @@
 
 r
-java:S1128"PRemove this unused import 'by.viho.managerapp.client.RestClientItemsRestClient'.(«ÀÄŸıÿÿÿÿ8¬¯¦úó1
-]
-java:S1128";Remove this unused import 'by.viho.managerapp.domain.Item'.(¿ã¯¥şÿÿÿÿ8¬¯¦úó1
+java:S1128"PRemove this unused import 'by.viho.managerapp.client.RestClientItemsRestClient'.(«ÀÄŸıÿÿÿÿ8ˆ“Èûô1
 W
-java:S1128"5Remove this unused import 'jakarta.validation.Valid'.(ÀãÅ”ûÿÿÿÿ8¬¯¦úó1
+java:S1128
+"5Remove this unused import 'jakarta.validation.Valid'.(ÀãÅ”ûÿÿÿÿ8ˆ“Èûô1
+Q
+java:S1128"4Remove this unused import 'org.slf4j.LoggerFactory'.(–ÿÚŞ8ç©­üô1
+k
+java:S1128"IRemove this unused import 'org.springframework.validation.BindingResult'.(‹¶¸ùÿÿÿÿ8ˆ“Èûô1
+i
+java:S1128"GRemove this unused import 'org.springframework.validation.ObjectError'.(ı£¿®ÿÿÿÿÿ8‰“Èûô1
+P
+java:S1128"4Remove this unused import 'java.security.Principal'.(’ÛŞ[8®û­üô1

@@ -28,9 +28,9 @@ public class ItemServiceImpl implements ItemService
 
     @Override
     @Transactional
-    public void createItem(Item item)
+    public Item createItem(Item item)
     {
-        itemRepo.save(item);
+         return this.itemRepo.save(item);
     }
 
     @Override
@@ -49,9 +49,9 @@ public class ItemServiceImpl implements ItemService
 
     @Override
     @Transactional
-    public void update(UpdateItemPayload updateItemPayload, int id)
+    public void  update(UpdateItemPayload updateItemPayload, int id)
     {
-         this.itemRepo.findById(id)
+          this.itemRepo.findById(id)
                 .ifPresentOrElse(item -> {
                     item.setTitle(updateItemPayload.title());
                     item.setDetails(updateItemPayload.details());
