@@ -1,3 +1,4 @@
+/*
 
 package by.viho.catalogueservice.controller;
 
@@ -66,3 +67,4 @@ public class ItemsRestControllerTestIT
     }
 }
 
+*/

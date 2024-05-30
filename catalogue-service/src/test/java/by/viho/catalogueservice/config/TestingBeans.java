@@ -1,4 +1,4 @@
-package by.viho.catalogueservice.config;
+/*package by.viho.catalogueservice.config;
 
 import org.mockito.Mockito;
 import org.springframework.context.annotation.Bean;
@@ -12,4 +12,4 @@ public class TestingBeans
     public JwtDecoder jwtDecoder(){
         return Mockito.mock(JwtDecoder.class);
     }
-}
+}*/

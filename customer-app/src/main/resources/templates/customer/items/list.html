@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Нащи товары &ndash; BestStore</title>
+</head>
+<body>
+    <h1>
+        <ul>
+            <li data-th-each="item : ${items}">
+                    <a data-th-text="${item.title}" data-th-href="@{/customer/item/{id}(id=${item.id})}"></a>
+            </li>
+        </ul>
+    </h1>
+</body>
+</html>

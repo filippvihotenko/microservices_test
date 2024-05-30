@@ -1,3 +1,4 @@
+/*
 package by.viho.catalogueservice.config;
 
 import org.springframework.context.annotation.Configuration;
@@ -25,3 +26,4 @@ public class SecurityBeans
                 .oauth2ResourceServer(oauth2ResourceServer->oauth2ResourceServer.jwt(Customizer.withDefaults())).build();
     }
 }
+*/

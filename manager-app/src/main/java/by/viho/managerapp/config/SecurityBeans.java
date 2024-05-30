@@ -1,3 +1,4 @@
+/*
 package by.viho.managerapp.config;
 
 import org.ietf.jgss.Oid;
@@ -46,3 +47,4 @@ public class SecurityBeans
     }
 
 }
+*/

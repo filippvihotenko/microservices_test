@@ -1,7 +1,7 @@
 best-store:
   services:
     catalogue:
-      uri: http://localhost:8081
+      uri: lb://catalogue-service
       username: admin
       password: admin
 spring:
@@ -21,7 +21,14 @@ spring:
               - view_catalogue
               - edit_catalogue
               - microprofile-jwt
-
+  application:
+    name: manager-service
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
 
 
 

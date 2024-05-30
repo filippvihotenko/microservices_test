@@ -4,8 +4,8 @@ java:S27894"@Methods with an "Optional" return type should never return null.(₯
 n
 java:S2259B"LA "NullPointerException" could be thrown; "getProperties()" can return null.(¬ϋρμψÿÿÿÿ8Χΰυυτ1
 m
-java:S2259)"KA "NullPointerException" could be thrown; "problemDetail" is nullable here.(¬ϋρμψÿÿÿÿ8γΧΣυτ1
+java:S2259B"KA "NullPointerException" could be thrown; "problemDetail" is nullable here.(¬ϋρμψÿÿÿÿ8βΧΣυτ1
 n
 java:S2259)"LA "NullPointerException" could be thrown; "getProperties()" can return null.(¬ϋρμψÿÿÿÿ8Χΰυυτ1
 m
-java:S2259B"KA "NullPointerException" could be thrown; "problemDetail" is nullable here.(¬ϋρμψÿÿÿÿ8βΧΣυτ1
+java:S2259)"KA "NullPointerException" could be thrown; "problemDetail" is nullable here.(¬ϋρμψÿÿÿÿ8γΧΣυτ1
